@@ -1,16 +1,17 @@
 
 public class PrimeraNecesidad extends Producto {
+	private Double descuento;
 	
-	public PrimeraNecesidad (String nombre, Double precio, Boolean precioCuidado) {
-		super(nombre, precio, precioCuidado);
+	public PrimeraNecesidad (String nombre, Double precio, int Descuento) {
+		super(nombre, precio);
 	}
 	
-	public PrimeraNecesidad (String nombre, Double precio) {
-		super(nombre, precio);
+	public Double getDescuento() {
+		return this.descuento;
 	}
 	
 	@Override
 	public Double getPrecio() {
-		return getPrecio() * 0.9;
+		return getPrecio() * (1 - descuento / 100);
 	}
 }
