@@ -11,21 +11,24 @@ public class Producto {
 	}
 	
 	public Producto (String nombre, Double precio) {
-		this.nombre = nombre;
-		this.precio = precio;
-		this.precioCuidado = false;
+		this(nombre, precio, false);
 	}
 	
 	public String getNombre() {
 		return nombre;
 	}
 	
-	public Double getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 	
 	public Boolean esPrecioCuidado() {
 		return precioCuidado;
+	}
+
+	public void aumentarPrecio(double precio) {
+		this.precio += precio;
+		
 	}
 	
 }

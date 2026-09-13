@@ -17,18 +17,14 @@ public class Supermercado {
         productos.add(producto);
     }
     
-	public int getCantidadDeproductos() {
+	public int cantidadDeProductos() {
 		return productos.size();
 	}
 	
 	public double getPrecioTotal() {
-		double total = 0;
-
-        for (Producto producto : productos) {
-            total += producto.getPrecio();
-        }
-
-        return total;
+		
+		return productos.stream().
+						 mapToDouble(producto -> producto.getPrecio()).
+						 sum();
     }
-	}
 }
